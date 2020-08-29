@@ -1,19 +1,41 @@
 import { fizzBuzz, fizzOrBuzz } from '../utils/fizzBuzz'
 
-test('fizzBuzz should return a result with the right values', () => {
-    // Arrange
-    const limit = 15;
-    // Act
-    const result = fizzBuzz(limit);
-    // Assert
-    expect(result.length).toBe(limit);
+describe('fizzBuzz should', () => {
+    test('return an array of the right lenght with the right values', () => {
+        // Arrange
+        const limit = 15;
+        // Act
+        const result = fizzBuzz(limit);
+        // Assert
+        expect(result.length).toBe(limit);
 
-    expect(result[0]).toBe(1)
-    expect(result[1]).toBe(2)
-    expect(result[2]).toBe('fizz')
-    expect(result[3]).toBe(4)
-    expect(result[4]).toBe('buzz')
+        expect(result[0]).toBe(1)
+        expect(result[1]).toBe(2)
+        expect(result[2]).toBe('fizz')
+        expect(result[3]).toBe(4)
+        expect(result[4]).toBe('buzz')
+    });
+
+    test('work when the limit is 1', () => {
+        const limit = 1;
+        const result = fizzBuzz(limit);
+        // Assert
+        expect(result.length).toBe(limit);
+
+        expect(result[0]).toBe(1)
+    });
+
+    test('report error when the limit is 0', () => {
+        const limit = 0;
+        expect(() => {fizzBuzz(limit)}).toThrow(Error);
+    });
+
+    test('report error when the limit is < 0', () => {
+        const limit = -2;
+        expect(() => {fizzBuzz(limit)}).toThrow(Error);
+    });
 });
+
 
 describe('fizzOrBuzz should', () => {
     test('return 1 when value is 1', () => {

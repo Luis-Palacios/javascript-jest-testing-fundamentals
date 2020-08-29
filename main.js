@@ -14,9 +14,15 @@ import { fizzBuzz } from "./utils/fizzBuzz.js";
 
 
 const main = () => {
-    const limit = -1;
+    const limit = 1;
     const result = fizzBuzz(limit);
     result.forEach(r => console.log(r));
 }
 
 main();
+
+
+// Crea un programa que dada una lista de numeros
+// eg: [1, 3, 5, 7, 8, 11] => Devuelva dos elementos dentro
+// de la lista que sumen un valor target dado por el usuaior
+// detectar([1, 3, 5, 7], 4) => '1 y 3'

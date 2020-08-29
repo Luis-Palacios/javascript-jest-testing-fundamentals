@@ -1,4 +1,7 @@
 export const fizzBuzz = (limit) => {
+    if(limit <= 0) {
+        throw new Error('Limit should be greater than 0')
+    }
     const result = [];
     for (let i = 1; i <= limit; i++) {
         result.push(fizzOrBuzz(i))
